@@ -20,7 +20,7 @@ function Content() {
     <div className="hero-body">
       <div className="container has-text-centered">
         <h1 className="title  is-1 is-cursor-pointer is-size-1-touch">
-          Your Pronounciation Helper
+          Your Pronunciation Helper
         </h1>
         <div className="field has-addons has-addons-centered">
           <p className="control is-expanded is-dark is-large">
