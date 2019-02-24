@@ -1,27 +1,26 @@
 import React, { useState } from "react";
+import { useSpeech } from "../../hooks";
 
 function Content() {
-  const [word, setWord] = useState("");
+  const [text, setText] = useState("");
   const [speak, setSpeak] = useState(false);
+  const [speech, setSpeech] = useSpeech({ text: String(text).toLowerCase() });
   const handleWordInput = e => {
     const value = e.target.value;
     if (value && value !== null) {
       setSpeak(true);
-      setWord(value);
+      setText(value);
     } else {
       setSpeak(false);
     }
   };
   const handleSpeak = () => {
-    const speech = new SpeechSynthesisUtterance(word);
+    setSpeech({ text });
     window.speechSynthesis.speak(speech);
   };
   return (
     <div className="hero-body">
       <div className="container has-text-centered">
-        <h1 className="title  is-1 is-cursor-pointer is-size-1-touch">
-          Your Pronunciation Helper
-        </h1>
         <div className="field has-addons has-addons-centered">
           <p className="control is-expanded is-dark is-large">
             <input
@@ -45,7 +44,11 @@ function Content() {
             </button>
           </p>
         </div>
-        <div className="field fieldmsg has-text-centered">Word meaning</div>
+        <h4 className="title  is-5 is-cursor-pointer is-size-5-touch">
+          Your Pronunciation Helper
+        </h4>
+        <div className="control">
+        </div>
       </div>
     </div>
   );

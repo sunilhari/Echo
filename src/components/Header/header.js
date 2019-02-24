@@ -1,4 +1,5 @@
 import React from "react";
+import appIcon from "../../appicon.svg";
 
 function Header() {
   return (
@@ -6,9 +7,8 @@ function Header() {
       <div className="container">
         <nav className="navbar is-dark">
           <div className="navbar-brand">
-            <a href="#" className="navbar-item navbar-logo">
-              Echo
-            </a>
+            <img src={appIcon} className="is-rounded" alt="Application Icon" />
+            <span className="navbar-item navbar-logo is-size-1">Echo</span>
           </div>
         </nav>
       </div>
