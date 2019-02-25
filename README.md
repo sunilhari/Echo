@@ -7,7 +7,6 @@
 
 It is increasingly difficult to get word pronunciations in mobile and if you are offline
 
-... _Work in Progress_
 
 #### License
 
