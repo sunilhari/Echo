@@ -30,7 +30,7 @@ function Content({ voices }) {
     <div className="hero-body">
       <div className="container has-text-centered">
         <div className="field has-addons has-addons-centered">
-          <p className="control is-expanded is-dark is-large">
+          <p className="control is-expanded is-dark">
             <input
               type="text"
               maxLength="20"
@@ -52,7 +52,7 @@ function Content({ voices }) {
             </button>
           </p>
         </div>
-        <h4 className="title  is-5 is-cursor-pointer is-size-5-touch">
+        <h4 className="title  is-5 is-cursor-pointer">
           Your Pronounciation Helper
         </h4>
         <Settings voices={voices} />

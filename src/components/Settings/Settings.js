@@ -13,7 +13,7 @@ function Settings({ voices }) {
   const handleVoiceChange = e => setVoice(e.target.value);
 
   return (
-    <nav className="level is-mobile">
+    <nav className="level">
       <div className="level-item has-text-centered">
         <div>
           <p className="heading">Volume</p>
