@@ -55,7 +55,7 @@ function Content({ voices }) {
           </p>
         </div>
         <h4 className="title  is-5 is-cursor-pointer is-size-5-touch">
-          Your Pronunciation Helper
+          Your Pronounciation Helper
         </h4>
         <Settings voices={voices} />
       </div>
