@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocalStorage } from "../../hooks";
 
-function Settings() {
+function Settings({ voices }) {
   const [rate, setRate] = useLocalStorage("rate", 1);
   const [pitch, setPitch] = useLocalStorage("pitch", 2);
   const [volume, setVolume] = useLocalStorage("volume", 1);
+  const [voice, setVoice] = useLocalStorage("voice", 1);
 
   const handleRateChange = e => setRate(e.target.value);
   const handlePitchChange = e => setPitch(e.target.value);
   const handleVolumeChange = e => setVolume(e.target.value);
+  const handleVoiceChange = e => setVoice(e.target.value);
+
   return (
     <nav className="level is-mobile">
       <div className="level-item has-text-centered">
@@ -56,12 +59,20 @@ function Settings() {
           </p>
         </div>
       </div>
-     {/*  <div className="level-item has-text-centered">
+      <div className="level-item has-text-centered">
         <div>
           <p className="heading">Voice</p>
-          <p className="title" />
+          <select onChange={handleVoiceChange} value={voice}>
+            {voices.map((voice, index) => {
+              return (
+                <option value={index} key={index}>
+                  {voice.name}({voice.lang})
+                </option>
+              );
+            })}
+          </select>
         </div>
-      </div> */}
+      </div>
     </nav>
   );
 }

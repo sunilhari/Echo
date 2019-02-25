@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import { useSpeech } from "../../hooks";
 import Settings from "../Settings";
 
-function Content() {
+function Content({ voices }) {
   const [text, setText] = useState("");
   const [speak, setSpeak] = useState(false);
-  const { pitch, volume, rate } = window.localStorage;
+  const { pitch, volume, rate, voice } = window.localStorage;
   const [speech, setSpeech] = useSpeech({
     text: String(text).toLowerCase(),
     pitch,
     volume,
-    rate
+    rate,
+    voice,
+    voices
   });
   const handleWordInput = e => {
     const value = e.target.value;
@@ -22,8 +24,8 @@ function Content() {
     }
   };
   const handleSpeak = () => {
-    const { pitch, volume, rate } = window.localStorage;
-    setSpeech({ text, pitch, volume, rate });
+    const { pitch, volume, rate, voice } = window.localStorage;
+    setSpeech({ text, pitch, volume, rate, voice, voices });
     window.speechSynthesis.speak(speech);
   };
   return (
@@ -55,9 +57,7 @@ function Content() {
         <h4 className="title  is-5 is-cursor-pointer is-size-5-touch">
           Your Pronunciation Helper
         </h4>
-        <div className>
-          <Settings />
-        </div>
+        <Settings voices={voices} />
       </div>
     </div>
   );
