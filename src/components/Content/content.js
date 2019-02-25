@@ -4,7 +4,6 @@ import Settings from "../Settings";
 
 function Content({ voices }) {
   const [text, setText] = useState("");
-  const [speak, setSpeak] = useState(false);
   const { pitch, volume, rate, voice } = window.localStorage;
   const [speech, setSpeech] = useSpeech({
     text: String(text).toLowerCase(),
@@ -15,12 +14,11 @@ function Content({ voices }) {
     voices
   });
   const handleWordInput = e => {
-    const value = e.target.value;
+    const value = String(e.target.value).trim();
     if (value && value !== null) {
-      setSpeak(true);
       setText(value);
     } else {
-      setSpeak(false);
+      setText("");
     }
   };
   const handleSpeak = () => {
@@ -47,7 +45,7 @@ function Content({ voices }) {
             <button
               type="submit"
               className="button is-info is-large"
-              disabled={!speak}
+              disabled={!Boolean(text)}
               onClick={handleSpeak}
             >
               Speak
