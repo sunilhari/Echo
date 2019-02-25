@@ -1,3 +1,3 @@
 import useSpeech from "./useSpeech";
-
-export { useSpeech };
+import useLocalStorage from "./useLocalStorage";
+export { useSpeech, useLocalStorage };
