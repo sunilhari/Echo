@@ -11,10 +11,12 @@ function App() {
     };
   }, []);
   return (
-    <section className="hero is-dark is-fullheight">
-      <Header />
-      <Content voices={voices} />
-    </section>
+    <div className="container">
+      <section className="hero is-dark is-fullheight">
+        <Header />
+        <Content voices={voices} />
+      </section>
+    </div>
   );
 }
 

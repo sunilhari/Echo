@@ -28,23 +28,23 @@ function Content({ voices }) {
   };
   return (
     <div className="hero-body">
-      <div className="container has-text-centered">
-        <div className="field has-addons has-addons-centered">
-          <p className="control is-expanded is-dark">
+      <div className="container has-text-centered is-fluid">
+        <div className="field has-addons has-addons-centered columns">
+          <p className="control is-expanded is-dark column is-8">
             <input
               type="text"
               maxLength="20"
               placeholder="Word"
-              className="input has-text-left is-large"
+              className="input has-text-left"
               autoComplete="off"
               required="required"
               onChange={handleWordInput}
             />
           </p>
-          <p className="control">
+          <p className="control column is-4">
             <button
               type="submit"
-              className="button is-info is-large"
+              className="button is-info"
               disabled={!Boolean(text)}
               onClick={handleSpeak}
             >
@@ -52,10 +52,9 @@ function Content({ voices }) {
             </button>
           </p>
         </div>
-        <h4 className="title  is-5 is-cursor-pointer">
-          Your Pronounciation Helper
-        </h4>
-        <Settings voices={voices} />
+        <div className="column is-12">
+          <Settings voices={voices} />
+        </div>
       </div>
     </div>
   );
