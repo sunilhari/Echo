@@ -1,7 +1,7 @@
 <p align="center">
   <img src="./src/appicon.svg" height="200px"/>
   <h1><center>Echo</center></h1>
-  <h2><center><a>https://pronounciation-helper.now.sh</a></center></h2>
+  <h2><center><a>https://pronunciation-helper.now.sh</a></center></h2>
   <br><br>
 </p>
 
